@@ -1,0 +1,6 @@
+= simple_form_for([@workout, @workout_exercise], html: { class: 'form-horizontal'}) do |f|
+  = f.input :exercise_id, collection: @exercises, :value_method => :id, label: "Exercise"
+  = f.input :sets, label: "Sets"
+  = f.input :reps, label: "Reps"
+  %br/
+  = f.button :submit

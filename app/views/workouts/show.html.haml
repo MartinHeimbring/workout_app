@@ -2,27 +2,34 @@
   .col-md-6
     %h2= @workout.date.strftime("%A %B %d - %H:%M:%S")
     %h3
-      Bodypart(s):
-      = @workout.workout
-    %h3
       My mood:
       = @workout.mood
     %h3
       Length:
       = @workout.length
 
+    %br
+
+    = link_to "Back", root_path
+    |
+    = link_to "Edit", edit_workout_path(@workout)
+    |
+    = link_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
+
   .col-md-6
     %h2 Exercises
-    = render @workout.exercises
+    %table.table
+      %thead
+        %tr
+          %th Name
+          %th Sets
+          %th Reps
+          %th Action
+      %tbody
+      = render @workout.workout_exercises
+    %h3= link_to "Add an exercise", new_workout_workout_exercise_path(@workout)
 
-%h3 Add an exercise
-= render 'exercises/form'
 
-%br
 
-= link_to "Back", root_path
-|
-= link_to "Edit", edit_workout_path(@workout)
-|
-= link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
+
 

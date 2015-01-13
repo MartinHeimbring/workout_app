@@ -11,6 +11,7 @@
         .navbar-header
           = link_to "Workout Log", root_path, class: "navbar-brand"
         .nav.navbar-nav.navbar-right
-          = link_to "New Workout", new_workout_path, class: "navbar navbar-link"
+          %li= link_to "New Workout", new_workout_path
+          %li= link_to "All Exercises", exercises_path
     .container
       = yield

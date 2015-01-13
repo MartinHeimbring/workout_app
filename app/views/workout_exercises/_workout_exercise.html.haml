@@ -1,0 +1,5 @@
+%tr
+  %td= workout_exercise.exercise.try(:name)
+  %td= workout_exercise.sets
+  %td= workout_exercise.reps
+  %td= link_to "Delete",  workout_workout_exercise_path(@workout, workout_exercise), method: :delete, data: { confirm: "Are you sure?" }
