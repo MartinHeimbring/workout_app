@@ -1,4 +1,6 @@
-- @workouts.each do |workout|
-  %h2= link_to workout.date, workout_path(workout.id)
-  %h3= workout.workout
-  %p= workout.date
+#index_workouts
+  - @workouts.each do |workout|
+    %h2= link_to workout.date.strftime("%A %B %d"), workout_path(workout.id)
+    %h3
+      Bodypart trained:
+      %b= workout.workout

@@ -1,15 +1,24 @@
-#workout
-  %p= @workout.date
-  %p= @workout.workout
-  %p= @workout.mood
-  %p= @workout.length
+.row
+  .col-md-6
+    %h2= @workout.date.strftime("%A %B %d - %H:%M:%S")
+    %h3
+      Bodypart(s):
+      = @workout.workout
+    %h3
+      My mood:
+      = @workout.mood
+    %h3
+      Length:
+      = @workout.length
 
-  #exercises
+  .col-md-6
     %h2 Exercises
     = render @workout.exercises
 
-    %h3 Add an exercise
-    = render 'exercises/form'
+%h3 Add an exercise
+= render 'exercises/form'
+
+%br
 
 = link_to "Back", root_path
 |

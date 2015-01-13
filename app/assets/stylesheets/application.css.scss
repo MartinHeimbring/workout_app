@@ -16,3 +16,31 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+html {
+  heigth: 100%;
+}
+
+body {
+  background: #ffd26b;
+}
+
+#index_workouts {
+  h2 {
+    margin-bottom: 10px;
+    font-weight: 100;
+    a {
+      color: white;
+    }
+  }
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
+
+.table {
+  width: 500px;
+}
+
