@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :workouts do
-    resources :exercises
+    resources :workout_exercises
   end
+  resources :exercises
 
   root 'workouts#index'
 
