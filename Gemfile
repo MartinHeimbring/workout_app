@@ -31,6 +31,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 3.3.1.0'
 gem 'devise'
 gem 'sendgrid'
+gem 'figaro'
 
 group :production do
   gem 'pg',             '0.17.1'
