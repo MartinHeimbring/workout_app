@@ -1,14 +1,15 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   def index
-    @exercise = Exercise.new
-    @exercises = Exercise.all
+    @exercise = current_user.exercises.new
+    @exercises = current_user.exercises.all
   end
 
 
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = current_user.exercises.new(exercise_params)
     if @exercise.save
       redirect_to exercises_path
     else

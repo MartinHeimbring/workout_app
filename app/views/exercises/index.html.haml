@@ -1,17 +1,19 @@
 #exercise
   .row
     .col-md-12
-      %h1 All Exercises
-      %table.table
-        %thead
-          %tr
-            %th Name
-            %th Delete
-        %tbody
-          - @exercises.each do |exercise|
+      - if @exercises.any?
+        %h1 All Exercises
+        %table.table
+          %thead
             %tr
-              %td= exercise.name
-              %td= link_to "delete", exercise_path(exercise), method: :delete, data: { confirm: "If you delete this exercise it will be deleted from all workouts that reference this exercise as well! Are you sure you want to proceed?"}
-
+              %th Name
+              %th Delete
+          %tbody
+            - @exercises.each do |exercise|
+              %tr
+                %td= exercise.name
+                %td= link_to "delete", exercise_path(exercise), method: :delete, data: { confirm: "If you delete this exercise it will be deleted from all workouts that reference this exercise as well! Are you sure you want to proceed?"}
+      - else
+        %h1 You have no exercises yet! Create one below...
       %h2 Add new exercises
       = render 'form'
