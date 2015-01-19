@@ -1,4 +1,4 @@
 %h1 Hi #{current_user.username.capitalize}
-%h2 You are tracking #{link_to current_user.workouts.count.to_s.concat(" workouts"), workouts_path} here! Amazing!!!
+%h2 You are tracking #{link_to pluralize(current_user.workouts.count, 'workout'), workouts_path} here! Amazing!!!
 %h3 You can delete your account here:
 = link_to "Cancel", registration_path(current_user), :confirm => "Are you sure?", :method => :delete, :class => "btn btn-danger"

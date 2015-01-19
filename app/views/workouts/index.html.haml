@@ -1,13 +1,7 @@
-- if user_signed_in?
-  #index_workouts
-  - if @workouts.any?
-    - @workouts.each do |workout|
-      %h2= link_to workout.date.strftime("%A %B %d"), workout_path(workout.id)
-  - else
-    %h2 No workouts yet. Create your first one #{link_to "here", new_workout_path}!
-
+#index_workouts
+- if @workouts.any?
+  - @workouts.each do |workout|
+    %h2= link_to workout.date.strftime("%A %B %d"), workout_path(workout.id)
 - else
-  %div.jumbotron.text-center
-    %h1 Welcome, new user!
-    %p.lead
-      You must log in or sign up before you start using this awesome app!
+  %h2 No workouts yet. Create your first one #{link_to "here", new_workout_path}!
+
