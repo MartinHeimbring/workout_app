@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default
+  .container
+    .navbar-header
+      =link_to {"You are awesome, #{current_user.username.capitalize}!", root_path, class: "navbar-brand" }
+    .nav.navbar-nav.navbar-right
+      %li= link_to "New Workout", new_workout_path
+      %li= link_to "My Workouts", root_path
+      %li= link_to "My Exercises", exercises_path
+      - if user_signed_in?
+        %li= link_to "Log Out", destroy_user_session_path, method: :delete
+      - else
+        %li= link_to "Log In", new_user_session_path
+        %li= link_to "Sign Up", new_user_registration_path
